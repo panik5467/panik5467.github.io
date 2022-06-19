@@ -147,11 +147,12 @@
       memoryCards.style.top = 0;
     }
     
-    // Apply random image to cards : *.jpg | a*.jpg
-    let rd = Math.floor(Math.random() * 2);
+    // Apply random image to cards : custom/(a*.jpg | *.jpg), fruits/*.jpg
+    let rd = Math.floor(Math.random() * 3);
+    let folder = (rd == 1)?"custom/":(rd == 2)?"custom/a":"fruits/";
     for ( let elt of document.getElementsByClassName("back") ) {
       var x = elt.className.replace("back","").replace("matching","").replace("card-","").trim();
-      elt.style.backgroundImage="url(images/custom/" + ((rd)?"a":"") + x + ".jpg)";
+      elt.style.backgroundImage="url(images/" + folder + x + ".jpg)";
     }
 
   };
