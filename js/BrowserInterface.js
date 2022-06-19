@@ -146,6 +146,13 @@
       memoryCards.style.height = document.getElementById('memory--app-container').offsetHeight + "px";
       memoryCards.style.top = 0;
     }
+    
+    // Apply random image to cards : *.jpg | a*.jpg
+    let rd = Math.floor(Math.random() * 2);
+    for ( let elt of document.getElementsByClassName("back") ) {
+      var x = elt.className.replace("back","").replace("matching","").replace("card-","").trim();
+      elt.style.backgroundImage="url(images/custom/" + ((rd)?"a":"") + x + ".jpg)";
+    }
 
   };
 
